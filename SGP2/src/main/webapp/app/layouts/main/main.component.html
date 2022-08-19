@@ -1,0 +1,105 @@
+<!--<body class="c-app">-->
+
+<!--<div class="c-sidebar">-->
+<!--    <div class="c-sidebar c-sidebar-dark c-sidebar-show">-->
+<!--        <ul class="c-sidebar-nav">-->
+<!--            <li class="c-sidebar-nav-title">Nav Title</li>-->
+<!--            <li class="c-sidebar-nav-item">-->
+<!--                <a class="c-sidebar-nav-link" href="#">-->
+<!--                    <i class="c-sidebar-nav-icon cil-speedometer"></i> Nav item-->
+<!--                </a>-->
+<!--            </li>-->
+<!--            <li class="c-sidebar-nav-item">-->
+<!--                <a class="c-sidebar-nav-link" href="#">-->
+<!--                    <i class="c-sidebar-nav-icon cil-speedometer"></i> With badge-->
+<!--                    <span class="badge badge-primary">NEW</span>-->
+<!--                </a>-->
+<!--            </li>-->
+<!--            <li class="c-sidebar-nav-item nav-dropdown">-->
+<!--                <a class="c-sidebar-nav-link nav-dropdown-toggle" href="#">-->
+<!--                    <i class="c-sidebar-nav-icon cil-puzzle"></i> Nav dropdown-->
+<!--                </a>-->
+<!--                <ul class="c-sidebar-nav-dropdown-items">-->
+<!--                    <li class="c-sidebar-nav-item">-->
+<!--                        <a class="c-sidebar-nav-link" href="#">-->
+<!--                            <i class="c-sidebar-nav-icon cil-puzzle"></i> Nav dropdown item-->
+<!--                        </a>-->
+<!--                    </li>-->
+<!--                    <li class="c-sidebar-nav-item">-->
+<!--                        <a class="c-sidebar-nav-link" href="#">-->
+<!--                            <i class="c-sidebar-nav-icon cil-puzzle"></i> Nav dropdown item-->
+<!--                        </a>-->
+<!--                    </li>-->
+<!--                </ul>-->
+<!--            </li>-->
+<!--            <li class="c-sidebar-nav-item mt-auto">-->
+<!--                <a class="c-sidebar-nav-link c-sidebar-nav-link-success" href="https://coreui.io">-->
+<!--                    <i class="c-sidebar-nav-icon cil-cloud-download"></i> Download CoreUI</a>-->
+<!--            </li>-->
+<!--            <li class="c-sidebar-nav-item">-->
+<!--                <a class="c-sidebar-nav-link c-sidebar-nav-link-danger" href="https://coreui.io/pro/">-->
+<!--                    <i class="c-sidebar-nav-icon cil-layers"></i> Try CoreUI-->
+<!--                    <strong>PRO</strong>-->
+<!--                </a>-->
+<!--            </li>-->
+<!--        </ul>-->
+<!--        <button class="c-sidebar-minimizer c-brand-minimizer" type="button"></button>-->
+<!--    </div>-->
+<!--</div>-->
+<!--<div class="c-wrapper">-->
+<!--    <header class="c-header">-->
+<!--        <button class="navbar-toggler sidebar-toggler" type="button" data-toggle="sidebar-show">-->
+<!--            ok-->
+<!--&lt;!&ndash;            <span class="navbar-toggler-icon"></span>&ndash;&gt;-->
+<!--        </button>-->
+<!--&lt;!&ndash;        <div *ngIf="isAuthenticated()">&ndash;&gt;-->
+<!--&lt;!&ndash;            <router-outlet name="navbar"></router-outlet>&ndash;&gt;-->
+<!--&lt;!&ndash;        </div>&ndash;&gt;-->
+<!--    </header>-->
+
+<!--    <div class="c-body">-->
+<!--        <main class="c-main">-->
+<!--            <div class="container-fluid">-->
+<!--                <div class="card jh-card" [ngSwitch]="isAuthenticated()">-->
+<!--                    <router-outlet *ngSwitchCase="true"></router-outlet>-->
+<!--                    <jhi-login *ngSwitchCase="false"></jhi-login>-->
+<!--                </div>-->
+
+<!--                &lt;!&ndash;    <jhi-footer></jhi-footer>&ndash;&gt;-->
+<!--            </div>        </main>-->
+<!--    </div>-->
+<!--    <footer class=" footer">-->
+<!--        &lt;!&ndash; Footer content here &ndash;&gt;-->
+<!--    </footer>-->
+<!--</div>-->
+<!--</body>-->
+
+<div *ngIf="isAuthenticated()">
+    <router-outlet name="navbar"></router-outlet>
+</div>
+<div *ngIf="isAuthenticated()" class="body">
+    <app-sidebar [style]="{paddingTop:'53px'}" *ngIf="isAuthenticated()"  #appSidebar [fixed]="true" [display]="'lg'" [minimized]="sidebarMinimized"
+                 (minimizedChange)="toggleMinimize($event)">
+        <app-sidebar-nav [navItems]="navItems" [perfectScrollbar] [disabled]="appSidebar.minimized"></app-sidebar-nav>
+        <app-sidebar-minimizer></app-sidebar-minimizer>
+    </app-sidebar>
+    <main class="main" *ngIf="isAuthenticated()">
+        <cui-breadcrumb>
+            <!-- Breadcrumb Menu-->
+<!--            <li class="breadcrumb-menu d-md-down-none">-->
+<!--                <div class="btn-group" role="group" aria-label="Button group with nested dropdown">-->
+<!--                    <a class="btn" href="#"><i class="icon-speech"></i></a>-->
+<!--                    <a class="btn" [routerLink]="['/dashboard']"><i class="icon-graph"></i> &nbsp;Dashboard</a>-->
+<!--                    <a class="btn" href="#"><i class="icon-settings"></i> &nbsp;Settings</a>-->
+<!--                </div>-->
+<!--            </li>-->
+        </cui-breadcrumb>
+        <div class="container-fluid">
+            <router-outlet></router-outlet>
+        </div><!-- /.container-fluid -->
+    </main>
+
+</div>
+<jhi-login *ngIf="!isAuthenticated()"></jhi-login>
+
+

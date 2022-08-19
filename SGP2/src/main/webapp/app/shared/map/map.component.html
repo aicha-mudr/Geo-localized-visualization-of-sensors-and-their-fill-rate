@@ -1,0 +1,17 @@
+<!--<div class="map-container ">-->
+<!--    <div class="map-frame">-->
+<!--    </div>-->
+
+<!--</div>-->
+
+
+<p-toast [baseZIndex]="1000000" position="bottom-center"></p-toast>
+
+<div class="col-lg-4 float-right input-group mb-3 p-0" >
+    <input id="field_date"  (dateSelect)="loadSituation()" [(ngModel)]="date" type="text" class="form-control " name="date" ngbDatepicker #dateDp="ngbDatepicker" />
+    <span class="input-group-append">
+         <button type="button" class="btn btn-secondary" (click)="dateDp.toggle()"><fa-icon icon="calendar-alt"></fa-icon></button>
+    </span>
+</div>
+<div id="map">
+</div>

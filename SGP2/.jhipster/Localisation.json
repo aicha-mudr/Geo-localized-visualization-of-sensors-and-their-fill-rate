@@ -1,0 +1,40 @@
+{
+  "fluentMethods": true,
+  "clientRootFolder": "",
+  "relationships": [],
+  "fields": [
+    {
+      "fieldName": "collectivite_1",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "collectivite_2",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "commune",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "adresse",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "logitude",
+      "fieldType": "Float"
+    },
+    {
+      "fieldName": "latitude",
+      "fieldType": "Float"
+    }
+  ],
+  "changelogDate": "20210526201200",
+  "dto": "no",
+  "searchEngine": false,
+  "service": "no",
+  "entityTableName": "localisation",
+  "databaseType": "sql",
+  "readOnly": false,
+  "jpaMetamodelFiltering": false,
+  "pagination": "pagination"
+}

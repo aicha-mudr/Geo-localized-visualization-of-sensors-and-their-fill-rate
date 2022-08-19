@@ -1,0 +1,63 @@
+{
+  "generator-jhipster": {
+    "promptValues": {
+      "packageName": "ma.ac.um5.ensias",
+      "nativeLanguage": "fr"
+    },
+    "jhipsterVersion": "6.10.1",
+    "applicationType": "monolith",
+    "baseName": "SGP_DB",
+    "packageName": "ma.ac.um5.ensias",
+    "packageFolder": "ma/ac/um5/ensias",
+    "serverPort": "8080",
+    "authenticationType": "jwt",
+    "cacheProvider": "no",
+    "websocket": false,
+    "databaseType": "sql",
+    "devDatabaseType": "postgresql",
+    "prodDatabaseType": "postgresql",
+    "searchEngine": false,
+    "messageBroker": false,
+    "serviceDiscoveryType": false,
+    "buildTool": "maven",
+    "enableSwaggerCodegen": false,
+    "jwtSecretKey": "MGJlN2JkNjc3NWYyM2U3NWQxYWYwNmJlMzA0NjU0NGYyZTMzY2ZiNGY5YjU3NjZkNzQ4ODM3MGJkODk1Mzg4Zjc3ZjU5NGQ0NWQ3NTVlZDBlYjI2ZjFkOWViN2JhMWUzZGE5OTkxMTI2YWM4MTYzYzAxZWFlNDI4OTlhYzMwZDI=",
+    "embeddableLaunchScript": false,
+    "useSass": true,
+    "clientPackageManager": "npm",
+    "clientFramework": "angularX",
+    "clientTheme": "litera",
+    "clientThemeVariant": "primary",
+    "creationTimestamp": 1621522661478,
+    "testFrameworks": [],
+    "jhiPrefix": "jhi",
+    "entitySuffix": "",
+    "dtoSuffix": "DTO",
+    "otherModules": [
+      {
+        "name": "generator-jhipster-primeng",
+        "version": "9.1.0"
+      },
+      {
+        "name": "generator-jhipster-imageblobcache",
+        "version": "1.0.2"
+      },
+      {
+        "name": "generator-codegen",
+        "version": "0.3.1"
+      },
+      {
+        "name": "generator-jhipster-fullcalendar",
+        "version": "0.0.4"
+      }
+    ],
+    "enableTranslation": true,
+    "nativeLanguage": "fr",
+    "languages": ["fr", "ar-ly", "en"],
+    "blueprints": [],
+    "lastLiquibaseTimestamp": 1622118245000,
+    "herokuAppName": "sgp-db",
+    "herokuDeployType": "jar",
+    "herokuJavaVersion": "11"
+  }
+}

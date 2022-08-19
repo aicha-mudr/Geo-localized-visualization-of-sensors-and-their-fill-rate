@@ -1,0 +1,141 @@
+<!--<nav class="navbar navbar-dark navbar-expand-md bg-primary">-->
+<!--    <a class="navbar-brand logo" routerLink="/" (click)="collapseNavbar()">-->
+<!--        <span class="logo-img"></span>-->
+<!--        <span class="navbar-title">SGP</span>-->
+<!--    </a>-->
+<!--    <a class="navbar-toggler d-lg-none" href="javascript:void(0);" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation" (click)="toggleNavbar()">-->
+<!--        <fa-icon icon="bars"></fa-icon>-->
+<!--    </a>-->
+<!--    <div class="navbar-collapse collapse" id="navbarResponsive" [ngbCollapse]="isNavbarCollapsed" [ngSwitch]="isAuthenticated()">-->
+<!--        <ul class="navbar-nav ml-auto">-->
+<!--            <li class="nav-item" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">-->
+<!--                <a class="nav-link" routerLink="/" (click)="collapseNavbar()">-->
+<!--                    <span>-->
+<!--                        <fa-icon icon="home"></fa-icon>-->
+<!--                        <span jhiTranslate="global.menu.home">Home</span>-->
+<!--                    </span>-->
+<!--                </a>-->
+<!--            </li>-->
+<!--            &lt;!&ndash; jhipster-needle-add-element-to-menu - JHipster will add new menu items here &ndash;&gt;-->
+<!--&lt;!&ndash;            <li *ngSwitchCase="true" ngbDropdown class="nav-item dropdown pointer" display="dynamic" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">&ndash;&gt;-->
+<!--&lt;!&ndash;                <a class="nav-link dropdown-toggle" ngbDropdownToggle href="javascript:void(0);" id="entity-menu">&ndash;&gt;-->
+<!--&lt;!&ndash;                    <span>&ndash;&gt;-->
+<!--&lt;!&ndash;                        <fa-icon icon="th-list"></fa-icon>&ndash;&gt;-->
+<!--&lt;!&ndash;                        <span jhiTranslate="global.menu.entities.main">&ndash;&gt;-->
+<!--&lt;!&ndash;                            Entities&ndash;&gt;-->
+<!--&lt;!&ndash;                        </span>&ndash;&gt;-->
+<!--&lt;!&ndash;                    </span>&ndash;&gt;-->
+<!--&lt;!&ndash;                </a>&ndash;&gt;-->
+<!--&lt;!&ndash;                <ul class="dropdown-menu" ngbDropdownMenu aria-labelledby="entity-menu">&ndash;&gt;-->
+<!--<li>-->
+<!--                        <a class="dropdown-item" routerLink="poubelle" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" (click)="collapseNavbar()">-->
+<!--                            <fa-icon icon="asterisk" [fixedWidth]="true"></fa-icon>-->
+<!--                            <span jhiTranslate="global.menu.entities.poubelle">Poubelle</span>-->
+<!--                        </a>-->
+<!--                    </li>-->
+<!--<li>-->
+<!--                        <a class="dropdown-item" routerLink="localisation" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" (click)="collapseNavbar()">-->
+<!--                            <fa-icon icon="asterisk" [fixedWidth]="true"></fa-icon>-->
+<!--                            <span jhiTranslate="global.menu.entities.localisation">Localisation</span>-->
+<!--                        </a>-->
+<!--                    </li>-->
+<!--<li>-->
+<!--                        <a class="dropdown-item" routerLink="situation" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" (click)="collapseNavbar()">-->
+<!--                            <fa-icon class="fa fa-line-chart" icon="asterisk" [fixedWidth]="true"></fa-icon>-->
+<!--                            <span jhiTranslate="global.menu.entities.situation">Situation</span>-->
+<!--                        </a>-->
+<!--                    </li>-->
+<!--&lt;!&ndash;                    &lt;!&ndash; jhipster-needle-add-entity-to-menu - JHipster will add entities to the menu here &ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;                </ul>&ndash;&gt;-->
+<!--&lt;!&ndash;            </li>&ndash;&gt;-->
+<!--            <li *jhiHasAnyAuthority="'ROLE_ADMIN'" ngbDropdown class="nav-item dropdown pointer" display="dynamic" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">-->
+<!--                <a class="nav-link dropdown-toggle" ngbDropdownToggle href="javascript:void(0);" id="admin-menu">-->
+<!--                    <span>-->
+<!--                        <fa-icon icon="user-plus"></fa-icon>-->
+<!--                        <span jhiTranslate="global.menu.admin.main">Administration</span>-->
+<!--                    </span>-->
+<!--                </a>-->
+<!--                <ul class="dropdown-menu" ngbDropdownMenu aria-labelledby="admin-menu">-->
+<!--                    <li>-->
+<!--                        <a class="dropdown-item" routerLink="admin/user-management" routerLinkActive="active" (click)="collapseNavbar()">-->
+<!--                            <fa-icon icon="user" [fixedWidth]="true"></fa-icon>-->
+<!--                            <span jhiTranslate="global.menu.admin.userManagement">User management</span>-->
+<!--                        </a>-->
+<!--                    </li>-->
+
+<!--                </ul>-->
+<!--            </li>-->
+
+
+<!--            <li ngbDropdown class="nav-item dropdown pointer" display="dynamic" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">-->
+<!--                <a class="nav-link dropdown-toggle" ngbDropdownToggle href="javascript:void(0);" id="account-menu">-->
+<!--                    <span *ngIf="!getImageUrl()">-->
+<!--                        <fa-icon icon="user"></fa-icon>-->
+<!--                        <span >-->
+<!--                            {{getName()}}-->
+<!--                        </span>-->
+<!--                    </span>-->
+<!--                    <span *ngIf="getImageUrl()">-->
+<!--                        <img [src]="getImageUrl()" class="profile-image rounded-circle" alt="Avatar">-->
+<!--                    </span>-->
+<!--                </a>-->
+<!--                <ul class="dropdown-menu" ngbDropdownMenu aria-labelledby="account-menu">-->
+<!--                    <li *ngSwitchCase="true">-->
+<!--                        <a class="dropdown-item" routerLink="account/settings" routerLinkActive="active" (click)="collapseNavbar()">-->
+<!--                            <fa-icon icon="wrench" [fixedWidth]="true"></fa-icon>-->
+<!--                            <span jhiTranslate="global.menu.account.settings">Settings</span>-->
+<!--                        </a>-->
+<!--                    </li>-->
+<!--                    <li *ngSwitchCase="true">-->
+<!--                        <a class="dropdown-item" routerLink="account/password" routerLinkActive="active" (click)="collapseNavbar()">-->
+<!--                            <fa-icon icon="lock" [fixedWidth]="true"></fa-icon>-->
+<!--                            <span jhiTranslate="global.menu.account.password">Password</span>-->
+<!--                        </a>-->
+<!--                    </li>-->
+<!--                    <li *ngSwitchCase="true">-->
+<!--                        <a class="dropdown-item" (click)="logout()" id="logout">-->
+<!--                            <fa-icon icon="sign-out-alt" [fixedWidth]="true"></fa-icon>-->
+<!--                            <span jhiTranslate="global.menu.account.logout">Sign out</span>-->
+<!--                        </a>-->
+<!--                    </li>-->
+<!--                </ul>-->
+<!--            </li>-->
+
+
+<!--        </ul>-->
+<!--    </div>-->
+<!--</nav>-->
+
+
+<app-header class="bg-primary appHeader mat-elevation-z3"
+    [navbarBrandRouterLink]="['/Dashboard']"
+    [fixed]="true"
+    [navbarBrandFull]="{src: '../../../content/images/SGP_LOGO.png', width: 40, height: 40, alt: 'SGP Logo'}"
+    [navbarBrandMinimized]="{src: '../../../content/images/SGP_LOGO.png', width: 30, height: 30, alt: 'SGP Logo'}"
+    [sidebarToggler]="'lg'"
+    [asideMenuToggler]="false">
+    <ul class="nav navbar-nav ml-auto text-white">
+        <li class="nav-item dropdown" dropdown placement="bottom right">
+            <a class="nav-link" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false" dropdownToggle (click)="false">
+<!--                <img src="../../../content/images/SGP_LOGO.png" class="img-avatar" alt="admin@bootstrapmaster.com"/>-->
+                <span *ngIf="!getImageUrl()">
+                                        <fa-icon icon="user"></fa-icon>
+                                        <span>
+                                            {{getName()}}
+                                        </span>
+                                    </span>
+                <span *ngIf="getImageUrl()">
+                                        <img [src]="getImageUrl()" class="profile-image rounded-circle" alt="Avatar">
+                                    </span>
+            </a>
+
+            <div class="dropdown-menu dropdown-menu-right" *dropdownMenu aria-labelledby="simple-dropdown">
+                <a class="dropdown-item" routerLink="account/settings" routerLinkActive="active" ><i class="fa fa-wrench"></i> Paramétres</a>
+
+                <a class="dropdown-item" routerLink="account/password" routerLinkActive="active"><i class="fa fa-lock"></i> Mot de passe</a>
+                <a class="dropdown-item" (click)="logout()" ><i class="fa fa-bell-o"></i> Déconexion </a>
+
+            </div>
+        </li>
+    </ul>
+</app-header>

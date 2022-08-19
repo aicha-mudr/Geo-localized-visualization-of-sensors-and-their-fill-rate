@@ -1,0 +1,27 @@
+{
+  "sgpDbApp": {
+    "localisation": {
+      "home": {
+        "title": "Localisations",
+        "createLabel": "Create a new Localisation",
+        "createOrEditLabel": "Create or edit a Localisation",
+        "notFound": "No Localisations found"
+      },
+      "created": "A new Localisation is created with identifier {{ param }}",
+      "updated": "A Localisation is updated with identifier {{ param }}",
+      "deleted": "A Localisation is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Localisation {{ id }}?"
+      },
+      "detail": {
+        "title": "Localisation"
+      },
+      "collectivite_1": "Collectivite 1",
+      "collectivite_2": "Collectivite 2",
+      "commune": "Commune",
+      "adresse": "Adresse",
+      "logitude": "Logitude",
+      "latitude": "Latitude"
+    }
+  }
+}

@@ -1,0 +1,62 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+            <h2 id="jhi-localisation-heading" jhiTranslate="sgpDbApp.localisation.home.createOrEditLabel">Create or edit a Localisation</h2>
+
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+
+                <div class="form-group" [hidden]="!editForm.get('id')!.value">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id" formControlName="id" readonly />
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="sgpDbApp.localisation.collectivite_1" for="field_collectivite_1">Collectivite 1</label>
+                    <input type="text" class="form-control" name="collectivite_1" id="field_collectivite_1"
+                           formControlName="collectivite_1"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="sgpDbApp.localisation.collectivite_2" for="field_collectivite_2">Collectivite 2</label>
+                    <input type="text" class="form-control" name="collectivite_2" id="field_collectivite_2"
+                           formControlName="collectivite_2"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="sgpDbApp.localisation.commune" for="field_commune">Commune</label>
+                    <input type="text" class="form-control" name="commune" id="field_commune"
+                           formControlName="commune"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="sgpDbApp.localisation.adresse" for="field_adresse">Adresse</label>
+                    <input type="text" class="form-control" name="adresse" id="field_adresse"
+                           formControlName="adresse"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="sgpDbApp.localisation.logitude" for="field_logitude">Logitude</label>
+                    <input type="number" class="form-control" name="logitude" id="field_logitude"
+                           formControlName="logitude"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="sgpDbApp.localisation.latitude" for="field_latitude">Latitude</label>
+                    <input type="number" class="form-control" name="latitude" id="field_latitude"
+                           formControlName="latitude"/>
+                </div>
+            </div>
+
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary" (click)="previousState()">
+                    <fa-icon icon="ban"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+
+                <button type="submit" id="save-entity" [disabled]="editForm.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon icon="save"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

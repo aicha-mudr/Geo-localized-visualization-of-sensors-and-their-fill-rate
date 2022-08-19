@@ -1,0 +1,16 @@
+<p-toast [baseZIndex]="1000000" position="bottom-center"></p-toast>
+<p-fileUpload name="myfile" [customUpload]="true" mode="advanced" cancelLabel="Annuler" chooseLabel="Choisir" uploadLabel="Confirmer"  (uploadHandler)="onUpload($event)"
+              [multiple]="false" accept=".xlsx" [maxFileSize]="10000000000">
+    <ng-template let-file pTemplate="file">
+        <div>
+            <span class="d-flex inline-flex">
+                <i class="fa fa-file-archive-o fa-lg" ></i>
+                <h3 class="pr-3">{{file.name}}</h3>
+            </span>
+            <i class="text-black-50">{{file.size+' Kb'}}</i>
+        </div>
+    </ng-template>
+    <ng-template pTemplate="content">
+        <p-progressSpinner class="d-flex align-self-center" *ngIf="display"></p-progressSpinner>
+    </ng-template>
+</p-fileUpload>

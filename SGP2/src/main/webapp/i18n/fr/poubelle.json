@@ -1,0 +1,25 @@
+{
+  "sgpDbApp": {
+    "poubelle": {
+      "home": {
+        "title": "Poubelles",
+        "createLabel": "Créer un nouveau Poubelle",
+        "createOrEditLabel": "Créer ou éditer un Poubelle",
+        "notFound": "Aucun Poubelle trouvé"
+      },
+      "created": "Un nouveau Poubelle a été créé avec l'identifiant {{ param }}",
+      "updated": "Le Poubelle avec l'identifiant {{ param }} a été mis à jour",
+      "deleted": "Le Poubelle avec l'identifiant {{ param }} a été supprimé",
+      "delete": {
+        "question": "Etes-vous certain de vouloir supprimer le Poubelle {{ id }} ?"
+      },
+      "detail": {
+        "title": "Poubelle"
+      },
+      "ref_okko": "Ref Okko",
+      "ref_mineris": "Ref Mineris",
+      "ref_produit": "Ref Produit",
+      "localisation": "Localisation"
+    }
+  }
+}

@@ -1,0 +1,36 @@
+{
+  "fluentMethods": true,
+  "clientRootFolder": "",
+  "relationships": [
+    {
+      "relationshipName": "poubelle",
+      "otherEntityName": "poubelle",
+      "relationshipType": "many-to-one",
+      "otherEntityField": "id",
+      "otherEntityRelationshipName": "situation"
+    }
+  ],
+  "fields": [
+    {
+      "fieldName": "date",
+      "fieldType": "LocalDate"
+    },
+    {
+      "fieldName": "volume",
+      "fieldType": "Float"
+    },
+    {
+      "fieldName": "remplissage",
+      "fieldType": "Float"
+    }
+  ],
+  "changelogDate": "20210527122405",
+  "dto": "no",
+  "searchEngine": false,
+  "service": "no",
+  "entityTableName": "situation",
+  "databaseType": "sql",
+  "readOnly": false,
+  "jpaMetamodelFiltering": false,
+  "pagination": "pagination"
+}

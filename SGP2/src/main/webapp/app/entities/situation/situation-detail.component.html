@@ -1,0 +1,44 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="situation">
+            <h2><span jhiTranslate="sgpDbApp.situation.detail.title">Situation</span> {{ situation.id }}</h2>
+
+            <hr>
+
+            <jhi-alert-error></jhi-alert-error>
+
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="sgpDbApp.situation.date">Date</span></dt>
+                <dd>
+                    <span>{{ situation.date | date:'shortDate' }}</span>
+                </dd>
+                <dt><span jhiTranslate="sgpDbApp.situation.volume">Volume</span></dt>
+                <dd>
+                    <span>{{ situation.volume }}</span>
+                </dd>
+                <dt><span jhiTranslate="sgpDbApp.situation.remplissage">Remplissage</span></dt>
+                <dd>
+                    <span>{{ situation.remplissage +'%' }}</span>
+                </dd>
+                <dt><span jhiTranslate="sgpDbApp.situation.poubelle">Poubelle</span></dt>
+                <dd>
+                    <div *ngIf="situation.poubelle">
+                        <a [routerLink]="['/poubelle', situation.poubelle?.id, 'view']">{{ situation.poubelle?.id }}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/situation', situation.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

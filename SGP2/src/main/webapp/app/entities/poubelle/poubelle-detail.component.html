@@ -1,0 +1,44 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="poubelle">
+            <h2><span jhiTranslate="sgpDbApp.poubelle.detail.title">Poubelle</span> {{ poubelle.id }}</h2>
+
+            <hr>
+
+            <jhi-alert-error></jhi-alert-error>
+
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="sgpDbApp.poubelle.ref_okko">Ref Okko</span></dt>
+                <dd>
+                    <span>{{ poubelle.ref_okko }}</span>
+                </dd>
+                <dt><span jhiTranslate="sgpDbApp.poubelle.ref_mineris">Ref Mineris</span></dt>
+                <dd>
+                    <span>{{ poubelle.ref_mineris }}</span>
+                </dd>
+                <dt><span jhiTranslate="sgpDbApp.poubelle.ref_produit">Ref Produit</span></dt>
+                <dd>
+                    <span>{{ poubelle.ref_produit }}</span>
+                </dd>
+                <dt><span jhiTranslate="sgpDbApp.poubelle.localisation">Localisation</span></dt>
+                <dd>
+                    <div *ngIf="poubelle.localisation">
+                        <a [routerLink]="['/poubelle', poubelle.localisation?.id, 'localisation']">{{ poubelle.localisation?.id }}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/poubelle', poubelle.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+            </button>
+        </div>
+    </div>
+</div>
